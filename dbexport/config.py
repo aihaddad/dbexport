@@ -9,7 +9,6 @@ from sqlalchemy.orm import sessionmaker
 @lru_cache(maxsize=32)
 def engine(db_url=None):
     db_url = db_url or os.getenv("DB_URL")
-    print(db_url)
     if not db_url:
         raise ValueError("Database URL is required")
     return create_engine(db_url)
